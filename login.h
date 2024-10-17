@@ -24,7 +24,8 @@ signals:
     void loginSuccessful(const QString &username, const QString &password, QTcpSocket * socket);
 
 private slots:
-    void handleLogin();// 로그인 버튼 누른 후 로그인 처리
+
+    void on_loginButton_clicked(); //handleLogin():로그인 버튼 누른 후 로그인 처리
 
 private:
     Ui::login *ui;

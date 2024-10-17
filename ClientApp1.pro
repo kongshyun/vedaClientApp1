@@ -9,13 +9,16 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chatroomselection.cpp \
     login.cpp \
     main.cpp
 
 HEADERS += \
+    chatroomselection.h \
     login.h
 
 FORMS += \
+    chatroomselection.ui \
     login.ui
 
 # Default rules for deployment.

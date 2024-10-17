@@ -15,12 +15,12 @@ login::~login()
 }
 
 
-void login::handleLogin()
+
+void login::on_loginButton_clicked()
 {
     QString username = ui->usernameEdit->text();         // 로그인 username
     QString password = ui->passwordEdit->text();         // 로그인 password
     QString serverAddress = "127.0.0.1";             // 접속할 서버 ip 주소
-
     loginSocket = new QTcpSocket(this);               // 로그인시 서버와 연결할 소켓 객체 생성
     loginSocket->connectToHost(serverAddress, 12345); // 소켓 바인드(IP주소, 포트 이용)
 
@@ -33,7 +33,6 @@ void login::handleLogin()
     {
         QMessageBox::warning(this,"Login","ID and password is not correct");
     }
-
     if (loginSocket->waitForConnected()) {                                  // 서버와 연결되면
         qDebug() << "Connected to server.";                                 // 연결 성공 로그 출력
 
