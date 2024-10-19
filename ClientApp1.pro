@@ -10,15 +10,19 @@ CONFIG += c++17
 
 SOURCES += \
     chatroomselection.cpp \
+    chatwindow1.cpp \
     login.cpp \
     main.cpp
 
 HEADERS += \
     chatroomselection.h \
+    chatwindow1.h \
+    clientData.h \
     login.h
 
 FORMS += \
     chatroomselection.ui \
+    chatwindow1.ui \
     login.ui
 
 # Default rules for deployment.

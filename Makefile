@@ -53,15 +53,19 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = chatroomselection.cpp \
+		chatwindow1.cpp \
 		login.cpp \
 		main.cpp qrc_images.cpp \
 		moc_chatroomselection.cpp \
+		moc_chatwindow1.cpp \
 		moc_login.cpp
 OBJECTS       = chatroomselection.o \
+		chatwindow1.o \
 		login.o \
 		main.o \
 		qrc_images.o \
 		moc_chatroomselection.o \
+		moc_chatwindow1.o \
 		moc_login.o
 DIST          = /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -156,7 +160,10 @@ DIST          = /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		ClientApp1.pro chatroomselection.h \
+		chatwindow1.h \
+		clientData.h \
 		login.h chatroomselection.cpp \
+		chatwindow1.cpp \
 		login.cpp \
 		main.cpp
 QMAKE_TARGET  = ClientApp1
@@ -167,7 +174,7 @@ TARGET        = ClientApp1
 first: all
 ####### Build rules
 
-ClientApp1: ui_chatroomselection.h ui_login.h $(OBJECTS)  
+ClientApp1: ui_chatroomselection.h ui_chatwindow1.h ui_login.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ClientApp1.pro /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -375,9 +382,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents images.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents chatroomselection.h login.h $(DISTDIR)/
-	$(COPY_FILE) --parents chatroomselection.cpp login.cpp main.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents chatroomselection.ui login.ui $(DISTDIR)/
+	$(COPY_FILE) --parents chatroomselection.h chatwindow1.h clientData.h login.h $(DISTDIR)/
+	$(COPY_FILE) --parents chatroomselection.cpp chatwindow1.cpp login.cpp main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents chatroomselection.ui chatwindow1.ui login.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -408,8 +415,10 @@ qrc_images.cpp: images.qrc \
 		/usr/lib/qt5/bin/rcc \
 		tv.png \
 		aircon.png \
+		smarthome.png \
 		login.png \
 		window.png \
+		temperature.png \
 		wind.png \
 		temp.png
 	/usr/lib/qt5/bin/rcc -name images images.qrc -o qrc_images.cpp
@@ -420,15 +429,23 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_chatroomselection.cpp moc_login.cpp
+compiler_moc_header_make_all: moc_chatroomselection.cpp moc_chatwindow1.cpp moc_login.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_chatroomselection.cpp moc_login.cpp
+	-$(DEL_FILE) moc_chatroomselection.cpp moc_chatwindow1.cpp moc_login.cpp
 moc_chatroomselection.cpp: chatroomselection.h \
+		chatwindow1.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatroomselection.h -o moc_chatroomselection.cpp
 
+moc_chatwindow1.cpp: chatwindow1.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatwindow1.h -o moc_chatwindow1.cpp
+
 moc_login.cpp: login.h \
+		chatroomselection.h \
+		chatwindow1.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include login.h -o moc_login.cpp
@@ -437,12 +454,16 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_chatroomselection.h ui_login.h
+compiler_uic_make_all: ui_chatroomselection.h ui_chatwindow1.h ui_login.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_chatroomselection.h ui_login.h
+	-$(DEL_FILE) ui_chatroomselection.h ui_chatwindow1.h ui_login.h
 ui_chatroomselection.h: chatroomselection.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic chatroomselection.ui -o ui_chatroomselection.h
+
+ui_chatwindow1.h: chatwindow1.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic chatwindow1.ui -o ui_chatwindow1.h
 
 ui_login.h: login.ui \
 		/usr/lib/qt5/bin/uic
@@ -459,14 +480,23 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 ####### Compile
 
 chatroomselection.o: chatroomselection.cpp chatroomselection.h \
+		chatwindow1.h \
 		ui_chatroomselection.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chatroomselection.o chatroomselection.cpp
 
+chatwindow1.o: chatwindow1.cpp chatwindow1.h \
+		ui_chatwindow1.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chatwindow1.o chatwindow1.cpp
+
 login.o: login.cpp login.h \
+		chatroomselection.h \
+		chatwindow1.h \
 		ui_login.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o login.cpp
 
-main.o: main.cpp login.h
+main.o: main.cpp login.h \
+		chatroomselection.h \
+		chatwindow1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 qrc_images.o: qrc_images.cpp 
@@ -474,6 +504,9 @@ qrc_images.o: qrc_images.cpp
 
 moc_chatroomselection.o: moc_chatroomselection.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_chatroomselection.o moc_chatroomselection.cpp
+
+moc_chatwindow1.o: moc_chatwindow1.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_chatwindow1.o moc_chatwindow1.cpp
 
 moc_login.o: moc_login.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_login.o moc_login.cpp

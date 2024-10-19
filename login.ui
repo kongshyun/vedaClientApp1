@@ -23,8 +23,8 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>110</y>
+      <x>230</x>
+      <y>150</y>
       <width>241</width>
       <height>281</height>
      </rect>
@@ -42,7 +42,7 @@
      <property name="geometry">
       <rect>
        <x>90</x>
-       <y>190</y>
+       <y>140</y>
        <width>54</width>
        <height>21</height>
       </rect>
@@ -68,8 +68,8 @@ QPushButton:hover {
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>100</y>
+       <x>20</x>
+       <y>50</y>
        <width>201</width>
        <height>71</height>
       </rect>
@@ -139,7 +139,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>90</x>
-       <y>220</y>
+       <y>170</y>
        <width>54</width>
        <height>21</height>
       </rect>
@@ -165,22 +165,30 @@ QPushButton:hover {
     <widget class="QLabel" name="messageLabel">
      <property name="geometry">
       <rect>
-       <x>21</x>
-       <y>51</y>
-       <width>199</width>
-       <height>51</height>
+       <x>8</x>
+       <y>9</y>
+       <width>221</width>
+       <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 220, 237);
+font: 10pt &quot;Sans Serif&quot;;
+background-color: transparent;</string>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>50</y>
+      <x>210</x>
+      <y>100</y>
       <width>291</width>
       <height>51</height>
      </rect>
@@ -199,6 +207,22 @@ QPushButton:hover {
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>-20</y>
+      <width>111</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/smarthome.png&quot; width=&quot;90&quot; height=&quot;90&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>

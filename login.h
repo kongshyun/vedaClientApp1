@@ -7,7 +7,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTcpSocket>
-
+#include "chatroomselection.h"
 
 namespace Ui {
 class login;
@@ -30,6 +30,7 @@ private slots:
 private:
     Ui::login *ui;
     QTcpSocket * loginSocket;       // 로그인 시 서버와 연결할 소켓
+
 };
 
 #endif // LOGIN_H
