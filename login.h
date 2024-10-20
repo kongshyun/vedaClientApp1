@@ -20,16 +20,17 @@ class login : public QMainWindow
 public:
     explicit login(QWidget *parent = nullptr);
     ~login();
-signals:
-    void loginSuccessful(const QString &username, const QString &password, QTcpSocket * socket);
+    void connectToServer(const QString &host, quint16 port);    // 서버에 접속하기
 
 private slots:
 
     void on_loginButton_clicked(); //handleLogin():로그인 버튼 누른 후 로그인 처리
-
+    void sendMessage(const QString &message);                                   // 채팅방에서 서버로 메세지 전송
 private:
     Ui::login *ui;
-    QTcpSocket * loginSocket;       // 로그인 시 서버와 연결할 소켓
+    QTcpSocket * socket;       // 로그인 시 서버와 연결할 소켓
+    QString username;
+    QString password;
 
 };
 

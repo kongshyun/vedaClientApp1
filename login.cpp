@@ -3,9 +3,9 @@
 #include <QMessageBox>
 
 login::login(QWidget *parent) :
-    QMainWindow(parent),ui(new Ui::login)
+    QMainWindow(parent),ui(new Ui::login), socket(new QTcpSocket(this))
 {
-    qDebug() << " 로그인 UI!!!";
+    qDebug() << " 로그인 윈도우 UI 생성 !!";
     ui->setupUi(this);
 }
 
@@ -18,31 +18,37 @@ login::~login()
 
 void login::on_loginButton_clicked()
 {
-    QString username = ui->usernameEdit->text();         // 로그인 username
-    QString password = ui->passwordEdit->text();         // 로그인 password
-    QString serverAddress = "127.0.0.1";             // 접속할 서버 ip 주소
+    username = ui->usernameEdit->text();         // 로그인 username
+    password = ui->passwordEdit->text();         // 로그인 password
 
-    loginSocket = new QTcpSocket(this);               // 로그인시 서버와 연결할 소켓 객체 생성
-    loginSocket->connectToHost(serverAddress, 12345); // 소켓 바인드(IP주소, 포트 이용)
+    if (username.isEmpty() || password.isEmpty()) {                                 // ID와 PW가 모두 입력되었는지 확인
+        qDebug() << "ID or Password is empty. Not sending.";            // 로그 출력
+        ui->messageLabel->setText("Please enter both ID and Password.");    // 경고문 출력
+        return;
+    }
+    sendMessage("login : id = " + username + " / pw : " + password); // 서버로 로그인 정보(메시지) 전송
+}
 
-    if (loginSocket->waitForConnected()) {                                  // 서버와 연결되면
-        qDebug() << "Connected to server.";                                 // 연결 성공 로그 출력
 
-        loginSocket->write(username.toUtf8() + " " + password.toUtf8());     // 로그인 정보(입력한 username, password) 를 서버로 전송
-
-        if (loginSocket->waitForReadyRead()) {                              // 서버의 응답을 기다림
-            QByteArray response = loginSocket->readAll();                   // 서버로부터 받은 데이터 ( 서버 응답 == "client connected" )
-            QString serverResponse = QString::fromUtf8(response);
-            ui->messageLabel->setText(serverResponse);
-            this->hide();
-            ChatRoomSelection* chatRoomSelection = new ChatRoomSelection(username, password, loginSocket,this);
-            chatRoomSelection->show();// 시그널 받으면 Login에서 ChatRoomSelection으로 창 변경
-            //emit loginSuccessful(username, password, loginSocket);          // 정상적으로 서버로부터 데이터 받으면 loginSuccessful 시그널 발생
-                                                                            // loginSuccessful 시그널은 Client가 받을 예정
-                                                                            // 시그널 받으면 Login에서 ChatRoomSelection으로 창 변경
-        }
+void login::connectToServer(const QString &host, quint16 port) {   // 서버에 접속하기(서버 주소, 서버 포트 이용)
+    socket->connectToHost(host, port);                              // 서버 정보(주소, 포트) 이용하여 클라이언트 소켓으로 서버 접속 시도
+    if (socket->waitForConnected()) {                               // 접속 성공/접속 실패 로그 출력
+        qDebug() << "Connected to server!";
     }
     else {
-        ui->messageLabel->setText("Failed to connect to the server");
+        qDebug() << "Failed to connect to server!";
+    }
+}
+
+void login::sendMessage(const QString &message) {                      // 서버로 로그인 정보(메세지) 보내기 ---> login : id = 아이디 / pw : 패스워드
+    if (socket->state() == QAbstractSocket::ConnectedState) {           // 소켓 상태가 서버에 접속된 상태라면
+        socket->write(message.toUtf8());                                // 소켓 통해서 로그인 정보 전송
+        qDebug() << "Client sent message:" << message;                  // 로그 추가
+        ui->messageLabel->setText(message);
+        this->close();                                      // 메시지 전송 후 로그인 창 닫기
+
+        //채팅창 고르는 윈도우 열기
+        ChatRoomSelection* chatRoomSelection = new ChatRoomSelection(username, password, socket,this);
+        chatRoomSelection->show();// 시그널 받으면 Login에서 ChatRoomSelection으로 창 변경
     }
 }

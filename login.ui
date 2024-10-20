@@ -171,13 +171,21 @@ QPushButton:hover {
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 220, 237);
 font: 10pt &quot;Sans Serif&quot;;
 background-color: transparent;</string>
      </property>
      <property name="text">
-      <string/>
+      <string>Sign In</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -197,6 +205,7 @@ background-color: transparent;</string>
      <font>
       <family>URW Gothic [urw]</family>
       <pointsize>20</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
