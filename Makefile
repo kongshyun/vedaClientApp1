@@ -446,6 +446,8 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_chatroomselection.cpp moc_chatwindow1.cpp moc_chatwindow2.cpp moc_chatwindow3.cpp moc_login.cpp
 moc_chatroomselection.cpp: chatroomselection.h \
 		chatwindow1.h \
+		chatwindow2.h \
+		chatwindow3.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatroomselection.h -o moc_chatroomselection.cpp
@@ -468,6 +470,8 @@ moc_chatwindow3.cpp: chatwindow3.h \
 moc_login.cpp: login.h \
 		chatroomselection.h \
 		chatwindow1.h \
+		chatwindow2.h \
+		chatwindow3.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include login.h -o moc_login.cpp
@@ -511,6 +515,8 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 chatroomselection.o: chatroomselection.cpp chatroomselection.h \
 		chatwindow1.h \
+		chatwindow2.h \
+		chatwindow3.h \
 		ui_chatroomselection.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chatroomselection.o chatroomselection.cpp
 
@@ -529,12 +535,16 @@ chatwindow3.o: chatwindow3.cpp chatwindow3.h \
 login.o: login.cpp login.h \
 		chatroomselection.h \
 		chatwindow1.h \
+		chatwindow2.h \
+		chatwindow3.h \
 		ui_login.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o login.cpp
 
 main.o: main.cpp login.h \
 		chatroomselection.h \
-		chatwindow1.h
+		chatwindow1.h \
+		chatwindow2.h \
+		chatwindow3.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 qrc_images.o: qrc_images.cpp 

@@ -6,6 +6,8 @@ ChatWindow2::ChatWindow2(QString id, int channel, QWidget *parent):
         ui(new Ui::ChatWindow2), socket(new QTcpSocket(this)), id(id), channel(channel)
 {
     ui->setupUi(this);
+    connectToServer("127.0.0.1", 12345); // 채팅방과 서버 연결
+    connect(socket, &QTcpSocket::readyRead, this, &ChatWindow2::readServerData); // 소켓을 이용해 서버로부터 메세지 수신
 }
 
 ChatWindow2::~ChatWindow2()

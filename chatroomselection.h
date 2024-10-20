@@ -9,7 +9,8 @@
 #include <QTcpServer>
 #include <QMap>
 #include "chatwindow1.h"
-
+#include "chatwindow2.h"
+#include "chatwindow3.h"
 namespace Ui {
 class ChatRoomSelection;
 }
@@ -28,7 +29,9 @@ private:
     QString password;
     Ui::ChatRoomSelection *ui;
 
-    QMap<int, ChatWindow1*> *chatWindows; // 채팅창을 관리할 QMap 추가
+    QMap<int, ChatWindow1*> *chatWindows1; // 채팅창을 관리할 QMap 추가
+    QMap<int, ChatWindow2*> *chatWindows2; // 채팅창을 관리할 QMap 추가
+    QMap<int, ChatWindow3*> *chatWindows3; // 채팅창을 관리할 QMap 추가
 
 private slots:
     void on_chatRoom1Button_clicked(); // 에어컨 관리 채팅창

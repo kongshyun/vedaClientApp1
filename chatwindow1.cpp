@@ -9,7 +9,6 @@ ChatWindow1::ChatWindow1(QString id, int channel, QWidget *parent):
   // 채팅방 소켓은 새로 생성하고, client로부터 id / channel 받아서 채팅방 객체 생성
 {
     ui->setupUi(this);
-    this->setFixedSize(720,480);
     connectToServer("127.0.0.1", 12345); // 채팅방과 서버 연결
     connect(socket, &QTcpSocket::readyRead, this, &ChatWindow1::readServerData); // 소켓을 이용해 서버로부터 메세지 수신
 }
