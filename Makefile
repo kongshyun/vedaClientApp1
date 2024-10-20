@@ -427,11 +427,14 @@ qrc_images.cpp: images.qrc \
 		tv.png \
 		aircon.png \
 		smarthome.png \
+		padlock.png \
 		login.png \
 		window.png \
+		tvon.png \
 		temperature.png \
 		wind.png \
-		temp.png
+		temp.png \
+		exit.png
 	/usr/lib/qt5/bin/rcc -name images images.qrc -o qrc_images.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h

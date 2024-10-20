@@ -21,6 +21,10 @@ ChatWindow1::~ChatWindow1()
 //에어컨 온도 조절 다이얼
 void ChatWindow1::on_dial_valueChanged(int value)
 {
+    if (!airconState) {  // 에어컨이 꺼진 상태라면
+        qDebug() << "Airconditioning is OFF. Dial cannot be changed.";
+        return;
+    }
     // 다이얼 값이 변경되면 서버로 메시지 전송
     QString dialMessage = id + " : " + QString::number(channel) + " : Temperature changed to " + QString::number(value);
     sendMessage(dialMessage);  // 서버로 다이얼 값 전송
@@ -70,8 +74,67 @@ void ChatWindow1::readServerData() {                                     // 서�
         int receivedChannel = messageParts[1].toInt();                  // 송신한 채널 번호
         QString content = messageParts[2];                              // 송신한 메시지 내용
 
-        if (receivedChannel == channel) {                                   // 송신자 채널과 수신자 채널이 같은 경우에만 출력
-            ui->messageDisplay->appendPlainText(" "+senderId + " >> " + content);    // 송신자 아이디와 메세지 출력
+        //if (receivedChannel == channel) {                                   // 송신자 채널과 수신자 채널이 같은 경우에만 출력
+        //    ui->messageDisplay->appendPlainText(" "+senderId + " : " + content);    // 송신자 아이디와 메세지 출력
+        //}
+        if (content == "Airconditioning ON!") {
+            ui->dial->setEnabled(true);  // 에어컨 켜짐 상태로 설정
+            ui->airconON->setStyleSheet("background-color: rgb(255, 170, 127); color: black;");
+            ui->airconOFF->setStyleSheet("");  // OFF 버튼 색상 초기화
+            airconState = true;  // 에어컨 상태 업데이트
+        } else if (content == "Airconditioning OFF!") {
+            ui->dial->setEnabled(false);  // 에어컨 꺼짐 상태로 설정
+            ui->airconOFF->setStyleSheet("background-color: rgb(216, 213, 255); color: black;");
+            ui->airconON->setStyleSheet("");  // ON 버튼 색상 초기화
+            airconState = false;  // 에어컨 상태 업데이트
+        } else {
+            ui->messageDisplay->appendPlainText(" " + senderId + " : " + content);  // 채팅 메시지 출력
         }
     }
 }
+
+void ChatWindow1::on_airconON_clicked()
+{
+    airconState = true;  // 에어컨이 켜짐
+    QString airconStateMessage = id + " : "+"Airconditioning ON!";
+    sendMessage(airconStateMessage);  // 서버로 다이얼 값 전송
+    ui->dial->setEnabled(true); // 다이얼 조작 가능하게 설정
+    ui->windBox->setEnabled(true);
+    ui->airconON->setStyleSheet("background-color: rgb(255, 170, 127); color: black;");
+    ui->airconOFF->setStyleSheet("");  // OFF 버튼 색상 초기화
+}
+
+
+void ChatWindow1::on_airconOFF_clicked()
+{
+    airconState = false;  // 에어컨이 꺼짐
+    QString airconStateMessage = id + " : "+"Airconditioning OFF!";
+    sendMessage(airconStateMessage);  // 서버로 상태 전송
+    ui->dial->setEnabled(false); // 다이얼 조작 불가능하게 설정
+
+    ui->airconOFF->setStyleSheet("background-color: rgb(216, 213, 255); color: black;");
+    ui->airconON->setStyleSheet("");  // ON 버튼 색상 초기화
+
+}
+
+
+
+void ChatWindow1::on_comboBox_activated(int index)
+{
+    qDebug() << "SpinBox!";             // 수신 완료 로그
+
+    QString airconWindMessage = id + " : " + QString::number(channel) + "Wind Speed changed to " + QString::number(index+1);
+    sendMessage(airconWindMessage);  // 서버로 상태 전송
+
+}
+
+
+void ChatWindow1::on_windBox_currentIndexChanged(int index)
+{
+    qDebug() << "SpinBox!";             // 수신 완료 로그
+
+    QString airconWindMessage = id + " : " + QString::number(channel) + "Wind Speed changed to " + QString::number(index+1);
+    sendMessage(airconWindMessage);  // 서버로 상태 전송
+
+}
+

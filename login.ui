@@ -17,20 +17,50 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(34, 68, 102);</string>
+   <string notr="true">background-color:rgb(226, 226, 226);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>120</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Gothic [urw]</family>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 170, 255);
+
+background-color: rgb(247, 255, 210);</string>
+    </property>
+    <property name="text">
+     <string>HyunBin SmartHome</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>150</y>
-      <width>241</width>
-      <height>281</height>
+      <x>240</x>
+      <y>170</y>
+      <width>240</width>
+      <height>280</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+     <string notr="true">gridline-color: rgb(255, 255, 255);
+
+background-color: rgb(247, 255, 210);</string>
     </property>
     <property name="title">
      <string/>
@@ -41,21 +71,29 @@
     <widget class="QPushButton" name="loginButton">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>80</x>
        <y>140</y>
-       <width>54</width>
+       <width>50</width>
        <height>21</height>
       </rect>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border: 2px solid #8f8f91; 
+	
+	background-color: rgb(222, 215, 255);
 	min-width : 50px;
 	max-width : 50px;
-	color: rgb(255, 255, 255);
-	border-radius:5px;
-}
 
+	color: rgb(85, 170, 255);
+	border-radius:5px;
+	font: 600 9pt &quot;NotoSerifTamilSlanted SemiBold&quot;;
+}
 QPushButton:hover {
     background-color: #2ecc71;
     color: white;              
@@ -65,93 +103,31 @@ QPushButton:hover {
       <string>login</string>
      </property>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>201</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string> ID </string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="usernameEdit">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit{
-	border:2px solid rgb(255,255,255);
-	border-radius:10px;
- 
-	color:#FFF
-}</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string> PW</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="passwordEdit">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit{
-	border:2px solid rgb(255,255,255);
-	border-radius:10px;
- 
-	color:#FFF
-}</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
     <widget class="QPushButton" name="signupButton">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>80</x>
        <y>170</y>
-       <width>54</width>
+       <width>50</width>
        <height>21</height>
       </rect>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border: 2px solid #8f8f91; 
+	
+	background-color: rgb(222, 215, 255);
 	min-width : 50px;
 	max-width : 50px;
 
-	color: rgb(255, 255, 255);
+	color: rgb(85, 170, 255);
 	border-radius:5px;
+	font: 600 9pt &quot;NotoSerifTamilSlanted SemiBold&quot;;
 }
 QPushButton:hover {
     background-color: #2ecc71;
@@ -180,7 +156,7 @@ QPushButton:hover {
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 220, 237);
+      <string notr="true">color: rgb(255, 0, 127);
 font: 10pt &quot;Sans Serif&quot;;
 background-color: transparent;</string>
      </property>
@@ -191,49 +167,144 @@ background-color: transparent;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/login.png&quot; width=&quot;30&quot; height=&quot;30&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/padlock.png&quot; width=&quot;20&quot; height=&quot;20&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="passwordEdit">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>100</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+	border:2px solid rgb(0, 170, 255);
+	border-radius:7px;
+	background-color: transparent;
+ 
+	color:rgb(45, 45, 45);
+}</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="usernameEdit">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>50</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+	border:2px solid rgb(0, 170, 255);
+	border-radius:7px;
+	background-color: transparent;
+ 
+	color:rgb(47, 47, 47);
+}</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>100</y>
-      <width>291</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>URW Gothic [urw]</family>
-      <pointsize>20</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>HyunBin SmartHome</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>-20</y>
-      <width>111</width>
-      <height>151</height>
+      <x>170</x>
+      <y>30</y>
+      <width>381</width>
+      <height>431</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:transparent;</string>
+     <string notr="true">border:5px solid rgb(255,255,255);
+background-color: rgb(247, 255, 210);
+border-radius:10px;</string>
     </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/smarthome.png&quot; width=&quot;90&quot; height=&quot;90&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
     </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>-20</y>
+       <width>131</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+border-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/smarthome.png&quot; width=&quot;90&quot; height=&quot;90&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
+   <zorder>frame</zorder>
+   <zorder>label_3</zorder>
+   <zorder>groupBox</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

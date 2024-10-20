@@ -137,7 +137,7 @@ background-color:rgb(240, 240, 240);
 border-color:transparent;</string>
    </property>
    <property name="text">
-    <string>AirConditional Manage Chat</string>
+    <string>AirConditioning Manage Chat</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -147,9 +147,9 @@ border-color:transparent;</string>
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>60</y>
+     <y>140</y>
      <width>301</width>
-     <height>191</height>
+     <height>161</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -162,8 +162,8 @@ border-color:transparent;</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>70</y>
+      <x>40</x>
+      <y>50</y>
       <width>51</width>
       <height>61</height>
      </rect>
@@ -182,8 +182,8 @@ border-color: transparent;</string>
    <widget class="QDial" name="dial">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>30</y>
+      <x>120</x>
+      <y>10</y>
       <width>151</width>
       <height>131</height>
      </rect>
@@ -214,14 +214,14 @@ border-color: transparent;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>0</y>
       <width>271</width>
-      <height>171</height>
+      <height>151</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">    font: 800 11pt &quot;Cantarell Extra Bold&quot;;
-	background-color: rgb(253, 255, 222);
+	background-color: transparent;
 	border: 1px solid rgb(85, 85, 255);
 	border-radius:15px;
 	color:rgb(85, 85, 255);</string>
@@ -241,9 +241,9 @@ border-color: transparent;</string>
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>260</y>
+     <y>310</y>
      <width>301</width>
-     <height>191</height>
+     <height>141</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -253,29 +253,134 @@ border-color:transparent;</string>
    <property name="title">
     <string/>
    </property>
+   <widget class="QComboBox" name="windBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>60</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(210, 236, 255);    
+font: 800 11pt &quot;Cantarell Extra Bold&quot;;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>1단</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2단</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3단</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4단</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5단</string>
+     </property>
+    </item>
+   </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
       <width>271</width>
-      <height>171</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">    font: 800 11pt &quot;Cantarell Extra Bold&quot;;
-	background-color: rgb(253, 255, 222);
+	background-color: transparent;
 	border: 1px solid rgb(85, 85, 255);
 	border-radius:15px;
 	color:rgb(85, 85, 255);</string>
     </property>
     <property name="text">
-     <string>Wind</string>
+     <string> Wind</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
    </widget>
+   <zorder>label_6</zorder>
+   <zorder>windBox</zorder>
+  </widget>
+  <widget class="QPushButton" name="airconON">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>80</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand Medium</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border:0px solid rgb(135, 135, 135);
+	color: rgb(0, 0, 0);
+	background-color: rgb(193, 193, 193);
+	border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: rgb(255, 251, 144);
+    color: rgb(195, 193, 255);
+}</string>
+   </property>
+   <property name="text">
+    <string>ON</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="airconOFF">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>80</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand Medium</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border: 0px solid rgb(135, 135, 135);
+	color: rgb(0, 0, 0);
+	background-color: rgb(193,193,193);
+	border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: rgb(255, 251, 144);
+    color: rgb(195, 193, 255);
+}</string>
+   </property>
+   <property name="text">
+    <string>OFF</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -39,6 +39,6 @@ private slots:
     void on_chatRoom2Button_clicked(); // TV 관리 채팅창
     void on_chatRoom3Button_clicked(); // 창문 관리 채팅창
     void openNewChatWindow(int channel);
-    void closeEvent(QCloseEvent *event); //채팅방선택 윈도우 창 닫으면 모두 닫히도록
+
 };
 #endif // CHATROOMSELECTION_H

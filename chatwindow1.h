@@ -23,12 +23,21 @@ private slots:
     void on_dial_valueChanged(int value);
     void on_sendButton_clicked();
 
+    void on_airconON_clicked();
+
+    void on_airconOFF_clicked();
+
+    void on_comboBox_activated(int index);
+
+    void on_windBox_currentIndexChanged(int index);
+
 private:
     Ui::ChatWindow1 *ui;
     QTcpSocket *socket;                     // 채팅창 소켓
 
     QString id;                             // 채팅방 사용자 아이디
     int channel;                            // 채팅방 채널(1,2,3)
+    bool airconState = false;  // 에어컨이 꺼진 상태로 시작
 };
 
 #endif // CHATWINDOW1_H

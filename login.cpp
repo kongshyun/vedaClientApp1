@@ -37,6 +37,7 @@ void login::connectToServer(const QString &host, quint16 port) {   // 서버에 
     }
     else {
         qDebug() << "Failed to connect to server!";
+        ui->messageLabel->setText("Failed to connect to setver! ");
     }
 }
 

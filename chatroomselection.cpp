@@ -1,6 +1,5 @@
 #include "chatroomselection.h"
 #include "ui_chatroomselection.h"
-#include <QCloseEvent>
 ChatRoomSelection::ChatRoomSelection(const QString &username, const QString &password, QTcpSocket *socket, QWidget *parent)
     : QMainWindow(parent),username(username), password(password), socket(socket),
     ui(new Ui::ChatRoomSelection),chatWindows1(new QMap<int, ChatWindow1*>),chatWindows2(new QMap<int, ChatWindow2*>),chatWindows3(new QMap<int, ChatWindow3*>)
@@ -84,31 +83,3 @@ void ChatRoomSelection::openNewChatWindow(int channel) {                        
 
 }
 
-
-void ChatRoomSelection::closeEvent(QCloseEvent *event) {
-    // 채팅창1 모두 닫기
-    for (auto it = chatWindows1->begin(); it != chatWindows1->end(); ++it) {
-        it.value()->close();
-        delete it.value();
-    }
-    chatWindows1->clear();
-
-    // 채팅창2 모두 닫기
-    for (auto it = chatWindows2->begin(); it != chatWindows2->end(); ++it) {
-        it.value()->close();
-        delete it.value();
-    }
-    chatWindows2->clear();
-
-    // 채팅창3 모두 닫기
-    for (auto it = chatWindows3->begin(); it != chatWindows3->end(); ++it) {
-        it.value()->close();
-        delete it.value();
-    }
-    chatWindows3->clear();
-
-    qDebug() << "모든 채팅창이 닫혔습니다.";
-
-    // 부모 클래스의 closeEvent 호출 (기본 동작 유지)
-    QMainWindow::closeEvent(event);
-}

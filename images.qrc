@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/images">
-        <file>login.png</file>
         <file>aircon.png</file>
         <file>wind.png</file>
         <file>temp.png</file>
@@ -8,5 +7,9 @@
         <file>window.png</file>
         <file>smarthome.png</file>
         <file>temperature.png</file>
+        <file>login.png</file>
+        <file>padlock.png</file>
+        <file>exit.png</file>
+        <file>tvon.png</file>
     </qresource>
 </RCC>

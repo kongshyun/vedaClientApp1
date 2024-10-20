@@ -37,7 +37,7 @@
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>50</x>
          <y>50</y>
          <width>91</width>
          <height>51</height>
@@ -213,10 +213,10 @@ background-color:transparent;</string>
   <widget class="QLabel" name="guideLabel">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>30</y>
+     <x>270</x>
+     <y>40</y>
      <width>181</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
@@ -226,7 +226,7 @@ background-color:transparent;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;
+    <string notr="true">background-color:rgb(255, 237, 253);
 color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
