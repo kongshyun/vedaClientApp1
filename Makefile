@@ -171,7 +171,6 @@ DIST          = /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		chatwindow1.h \
 		chatwindow2.h \
 		chatwindow3.h \
-		clientData.h \
 		login.h chatroomselection.cpp \
 		chatwindow1.cpp \
 		chatwindow2.cpp \
@@ -394,7 +393,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents images.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents chatroomselection.h chatwindow1.h chatwindow2.h chatwindow3.h clientData.h login.h $(DISTDIR)/
+	$(COPY_FILE) --parents chatroomselection.h chatwindow1.h chatwindow2.h chatwindow3.h login.h $(DISTDIR)/
 	$(COPY_FILE) --parents chatroomselection.cpp chatwindow1.cpp chatwindow2.cpp chatwindow3.cpp login.cpp main.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents chatroomselection.ui chatwindow1.ui chatwindow2.ui chatwindow3.ui login.ui $(DISTDIR)/
 

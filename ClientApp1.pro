@@ -21,7 +21,6 @@ HEADERS += \
     chatwindow1.h \
     chatwindow2.h \
     chatwindow3.h \
-    clientData.h \
     login.h
 
 FORMS += \

@@ -108,7 +108,7 @@ QPushButton:hover {
 border:2px solid rgb(181, 178, 255);
 border-radius: 7px;
 color: rgb(56, 56, 56);
-font: 12pt &quot;Quicksand&quot;;
+font: 10pt &quot;Quicksand&quot;;
 </string>
     </property>
    </widget>

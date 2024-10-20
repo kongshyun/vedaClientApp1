@@ -33,10 +33,12 @@ private:
     QMap<int, ChatWindow2*> *chatWindows2; // 채팅창을 관리할 QMap 추가
     QMap<int, ChatWindow3*> *chatWindows3; // 채팅창을 관리할 QMap 추가
 
+
 private slots:
     void on_chatRoom1Button_clicked(); // 에어컨 관리 채팅창
     void on_chatRoom2Button_clicked(); // TV 관리 채팅창
     void on_chatRoom3Button_clicked(); // 창문 관리 채팅창
     void openNewChatWindow(int channel);
+    void closeEvent(QCloseEvent *event); //채팅방선택 윈도우 창 닫으면 모두 닫히도록
 };
 #endif // CHATROOMSELECTION_H
