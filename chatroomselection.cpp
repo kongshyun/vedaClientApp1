@@ -25,12 +25,14 @@ void ChatRoomSelection::on_chatRoom1Button_clicked()
 void ChatRoomSelection::on_chatRoom2Button_clicked()
 {
     qDebug() << "ChatRoom 2 Button clicked!";
+    openNewChatWindow(2);
 }
 
 
 void ChatRoomSelection::on_chatRoom3Button_clicked()
 {
     qDebug() << "ChatRoom 3 Button clicked!";
+    openNewChatWindow(3);
 
 }
 
@@ -40,13 +42,33 @@ void ChatRoomSelection::openNewChatWindow(int channel) {                        
         qDebug() << "ChatWindow for channel" << channel << "is already open.";      // 로그 출력
         return;                                                                     // 이미 열려 있으면 아무것도 하지 않음
     }
+    if(channel==1){
+        ChatWindow1 *newChat = new ChatWindow1(username, channel);                              // 새로운 채팅창 생성
+        chatWindows->insert(channel, newChat);                                          // QMap(채팅창 관리)에 새 채팅창 추가
+        newChat->show();
+        connect(newChat, &ChatWindow1::destroyed, this, [this, channel]() {              // 채팅창이 닫힐 때 QMap에서 제거
+            chatWindows->remove(channel);                                               // 채팅창 제거
+            qDebug() << "ChatWindow for channel" << channel << "closed.";               // 로그 출력
+        });
+    }
+    else if(channel==2){
+        ChatWindow1 *newChat = new ChatWindow1(username, channel);                              // 새로운 채팅창 생성
+        chatWindows->insert(channel, newChat);                                          // QMap(채팅창 관리)에 새 채팅창 추가
+        newChat->show();
+        connect(newChat, &ChatWindow1::destroyed, this, [this, channel]() {              // 채팅창이 닫힐 때 QMap에서 제거
+            chatWindows->remove(channel);                                               // 채팅창 제거
+            qDebug() << "ChatWindow for channel" << channel << "closed.";               // 로그 출력
+        });
+    }
+    else if(channel==3){
+        ChatWindow1 *newChat = new ChatWindow1(username, channel);                              // 새로운 채팅창 생성
+        chatWindows->insert(channel, newChat);                                          // QMap(채팅창 관리)에 새 채팅창 추가
+        newChat->show();
+        connect(newChat, &ChatWindow1::destroyed, this, [this, channel]() {              // 채팅창이 닫힐 때 QMap에서 제거
+            chatWindows->remove(channel);                                               // 채팅창 제거
+            qDebug() << "ChatWindow for channel" << channel << "closed.";               // 로그 출력
+        });
+    }
 
-    ChatWindow1 *newChat = new ChatWindow1(username, channel);                              // 새로운 채팅창 생성
-    chatWindows->insert(channel, newChat);                                          // QMap(채팅창 관리)에 새 채팅창 추가
-    newChat->show();                                                                // 채팅창 표시
 
-    connect(newChat, &ChatWindow1::destroyed, this, [this, channel]() {              // 채팅창이 닫힐 때 QMap에서 제거
-        chatWindows->remove(channel);                                               // 채팅창 제거
-        qDebug() << "ChatWindow for channel" << channel << "closed.";               // 로그 출력
-    });
 }

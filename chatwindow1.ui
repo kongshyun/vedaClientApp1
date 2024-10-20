@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Chat1</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255,255,255);
@@ -107,8 +107,8 @@ QPushButton:hover {
      <string notr="true">background-color: transparent;
 border:2px solid rgb(181, 178, 255);
 border-radius: 7px;
-color: rgb(61, 61, 61);
-font: 9pt &quot;Quicksand&quot;;
+color: rgb(56, 56, 56);
+font: 12pt &quot;Quicksand&quot;;
 </string>
     </property>
    </widget>
