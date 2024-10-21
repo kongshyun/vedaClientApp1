@@ -246,9 +246,10 @@ color: rgb(0, 0, 0);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border-color: transparent;
-
+    <string notr="true">QPushButton{
+	background-color:rgba(0, 0, 0, 0);
+	border:none;
+}
 
 </string>
    </property>
@@ -275,6 +276,11 @@ border-color: transparent;
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <zorder>label_3</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>titleLabel</zorder>
+  <zorder>guideLabel</zorder>
+  <zorder>quitButton</zorder>
  </widget>
  <resources/>
  <connections/>
