@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = ClientApp11.0.0
-DISTDIR = /home/iam/Desktop/ClientApp1/.tmp/ClientApp11.0.0
+DISTDIR = /home/iam/Desktop/ClientApp1020/ClientApp1/.tmp/ClientApp11.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) /usr/lib/aarch64-linux-gnu/libQt5Widgets.so /usr/lib/aarch64-linux-gnu/libQt5Gui.so /usr/lib/aarch64-linux-gnu/libQt5Network.so /usr/lib/aarch64-linux-gnu/libQt5Core.so -lGL -lpthread   
@@ -434,7 +434,9 @@ qrc_images.cpp: images.qrc \
 		temperature.png \
 		wind.png \
 		temp.png \
-		exit.png
+		user.png \
+		exit.png \
+		quit.png
 	/usr/lib/qt5/bin/rcc -name images images.qrc -o qrc_images.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -452,22 +454,22 @@ moc_chatroomselection.cpp: chatroomselection.h \
 		chatwindow3.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatroomselection.h -o moc_chatroomselection.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1020/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1020/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatroomselection.h -o moc_chatroomselection.cpp
 
 moc_chatwindow1.cpp: chatwindow1.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatwindow1.h -o moc_chatwindow1.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1020/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1020/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatwindow1.h -o moc_chatwindow1.cpp
 
 moc_chatwindow2.cpp: chatwindow2.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatwindow2.h -o moc_chatwindow2.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1020/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1020/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatwindow2.h -o moc_chatwindow2.cpp
 
 moc_chatwindow3.cpp: chatwindow3.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatwindow3.h -o moc_chatwindow3.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1020/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1020/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include chatwindow3.h -o moc_chatwindow3.cpp
 
 moc_login.cpp: login.h \
 		chatroomselection.h \
@@ -476,7 +478,7 @@ moc_login.cpp: login.h \
 		chatwindow3.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include login.h -o moc_login.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iam/Desktop/ClientApp1020/ClientApp1/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iam/Desktop/ClientApp1020/ClientApp1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/12 -I/usr/include/aarch64-linux-gnu/c++/12 -I/usr/include/c++/12/backward -I/usr/lib/gcc/aarch64-linux-gnu/12/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include login.h -o moc_login.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

@@ -22,6 +22,8 @@ private slots:
     void readServerData();   // 서버에서 송신한 메세지 수신하기
     void on_sendButton_clicked();
 
+    void on_exitButton_clicked();
+
 private:
     Ui::ChatWindow2 *ui;
     QTcpSocket *socket;                     // 채팅창 소켓

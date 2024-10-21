@@ -40,5 +40,6 @@ private slots:
     void on_chatRoom3Button_clicked(); // 창문 관리 채팅창
     void openNewChatWindow(int channel);
 
+    void on_quitButton_clicked();
 };
 #endif // CHATROOMSELECTION_H

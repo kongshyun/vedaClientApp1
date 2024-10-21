@@ -382,6 +382,59 @@ QPushButton:hover {
     <string>OFF</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: transparent;
+	border-color:transparent;
+}
+
+QPushButton:hover {
+	border:2px solid  rgb(255, 142, 119);
+	background-color: transparent;
+	border-radius: 5px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="exit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>31</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color : transparent;
+border-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/exit.png&quot; width=&quot;25&quot; height=&quot;25&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>exitButton</zorder>
+  <zorder>chatgroupBox</zorder>
+  <zorder>titleLabel</zorder>
+  <zorder>tempGroup</zorder>
+  <zorder>tempGroup_2</zorder>
+  <zorder>airconON</zorder>
+  <zorder>airconOFF</zorder>
+  <zorder>exit</zorder>
  </widget>
  <resources/>
  <connections/>

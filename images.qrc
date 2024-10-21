@@ -11,5 +11,7 @@
         <file>padlock.png</file>
         <file>exit.png</file>
         <file>tvon.png</file>
+        <file>quit.png</file>
+        <file>user.png</file>
     </qresource>
 </RCC>

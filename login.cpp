@@ -49,7 +49,7 @@ void login::sendMessage(const QString &message) {                      // 서버
         this->close();                                      // 메시지 전송 후 로그인 창 닫기
 
         //채팅창 고르는 윈도우 열기
-        ChatRoomSelection* chatRoomSelection = new ChatRoomSelection(username, password, socket,this);
+        ChatRoomSelection* chatRoomSelection = new ChatRoomSelection(username, password, socket,nullptr); // 수정
         chatRoomSelection->show();// 시그널 받으면 Login에서 ChatRoomSelection으로 창 변경
     }
 }

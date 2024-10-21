@@ -63,3 +63,9 @@ void ChatWindow2::readServerData() {                                     // ì„œë
     }
 }
 
+
+void ChatWindow2::on_exitButton_clicked()
+{
+    this->close();
+}
+

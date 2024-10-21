@@ -31,6 +31,8 @@ private slots:
 
     void on_windBox_currentIndexChanged(int index);
 
+    void on_exitButton_clicked();
+
 private:
     Ui::ChatWindow1 *ui;
     QTcpSocket *socket;                     // 채팅창 소켓

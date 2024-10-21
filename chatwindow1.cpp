@@ -138,3 +138,9 @@ void ChatWindow1::on_windBox_currentIndexChanged(int index)
 
 }
 
+
+void ChatWindow1::on_exitButton_clicked()
+{
+    this->close();
+}
+
