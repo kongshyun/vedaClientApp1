@@ -147,7 +147,7 @@ border-color:transparent;</string>
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>90</y>
+     <y>120</y>
      <width>251</width>
      <height>191</height>
     </rect>
@@ -163,12 +163,56 @@ border-color:transparent;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="channelDownButton">
+  <widget class="QPushButton" name="exitButton">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>320</y>
-     <width>61</width>
+     <x>10</x>
+     <y>10</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color:rgba(0, 0, 0, 0);
+	border:rgba(0, 0, 0, 0);
+	border-radius: 15px;
+}
+
+QPushButton:hover {
+    background-color: rgba(255, 202, 172,0.5);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="exit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:  rgb(255, 255, 255);
+border:none;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/exit.png&quot; width = &quot;25&quot; height=&quot;25&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tvonButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>101</width>
      <height>31</height>
     </rect>
    </property>
@@ -180,66 +224,229 @@ border-color:transparent;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
-	border: 2px solid rgb(135, 135, 135);
+	border:0px solid rgb(135, 135, 135);
 	color: rgb(0, 0, 0);
-	background-color: rgb(170, 170, 255);
+	background-color: rgb(193, 193, 193);
 	border-radius: 5px;
 }
 
 QPushButton:hover {
+	border-radius: 5px;
     background-color: rgb(255, 251, 144);
     color: rgb(195, 193, 255);
 }</string>
    </property>
    <property name="text">
-    <string>Send</string>
+    <string>ON</string>
    </property>
   </widget>
-  <widget class="QLabel" name="exit">
+  <widget class="QPushButton" name="tvoffButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>31</width>
-     <height>41</height>
+     <x>210</x>
+     <y>90</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand Medium</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border:0px solid rgb(135, 135, 135);
+	color: rgb(0, 0, 0);
+	background-color: rgb(193, 193, 193);
+	border-radius: 5px;
+}
+
+QPushButton:hover {
+	border-radius: 5px;
+    background-color: rgb(255, 251, 144);
+    color: rgb(195, 193, 255);
+}</string>
+   </property>
+   <property name="text">
+    <string>OFF</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="channelBox">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>340</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color : transparent;
-border-color: transparent;</string>
+    <string notr="true">/* QSpinBox 기본 스타일 - 파스텔 톤 */
+QSpinBox {
+    background-color: #fce4ec;  /* 부드러운 핑크색 배경 */
+    border: 1px solid #f8bbd0;  /* 연한 핑크 테두리 */
+    border-radius: 5px;         /* 테두리 둥글게 */
+    padding: 2px;
+    color: #6a1b9a;             /* 텍스트 색상 - 부드러운 보라색 */
+    font: bold 12px;            /* 텍스트 굵게 */
+}
+
+/* QSpinBox의 위/아래 버튼(화살표) 스타일 */
+QSpinBox::up-button, QSpinBox::down-button {
+    background-color: #f8bbd0;  /* 버튼의 기본 배경색 - 연한 핑크 */
+    border: none;               /* 버튼 경계선 제거 */
+    width: 16px;                /* 버튼 넓이 설정 */
+}
+
+QSpinBox::up-arrow, QSpinBox::down-arrow {
+    width: 8px;                 /* 화살표 크기 */
+    height: 8px;
+    image: url(arrow.png);      /* 화살표 이미지 설정 가능 */
+}
+
+/* 마우스를 버튼에 올렸을 때 색상 변화 */
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background-color: #c5cae9;  /* 마우스 오버 시 연한 파란색으로 변경 */
+}
+
+/* QSpinBox의 입력 필드(텍스트 표시 영역) 스타일 */
+QSpinBox::editable {
+    background-color: #f3e5f5;  /* 입력 필드 배경색 - 연한 보라색 */
+    color: #6a1b9a;             /* 텍스트 색상 */
+}
+
+/* 스핀박스 버튼 클릭 시의 색상 변화 */
+QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {
+    background-color: #b39ddb;  /* 클릭 시 진한 보라색으로 변경 */
+}
+</string>
+   </property>
+   <property name="maximum">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="channelLabel">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>340</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand Medium</family>
+     <pointsize>12</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 85, 255);
+font: 500 12pt &quot;Quicksand Medium&quot;;
+background-color:transparent;
+border-color:transparent;</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/exit.png&quot; width=&quot;25&quot; height=&quot;25&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>Flatform</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="exitButton">
+  <widget class="QSlider" name="soundSlider">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>51</width>
-     <height>41</height>
+     <x>170</x>
+     <y>390</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background-color: transparent;
-	border-color:transparent;
+    <string notr="true">QSlider {
+    background-color: #e0e0e0;   /* 슬라이더 전체 배경색 */
+    border: transparent;   /* 슬라이더 테두리 */
+    border-radius: 5px;         /* 슬라이더 테두리의 둥근 정도 */
+    padding: 3px;                /* 슬라이더 내부 패딩 */
+}
+QSlider::groove:horizontal {
+    border: 0px solid rgb(255, 255, 255); /* 트랙 경계선 */
+    height: 10px;               /* 트랙의 높이 설정 */
+    background: rgb(72, 72, 72);     /* 트랙 배경색 */
+    margin: 1px 0;
+}
+QSlider::handle:horizontal {
+    background: rgb(255, 255, 127);      /* 핸들의 색상 */
+    border: 2px solid #5c5c5c;
+    width: 15px;                /* 핸들의 넓이 설정 */
+	height:10 px;
+    margin: -5px 0;             /* 핸들의 마진 */
+    border-radius: 5px;         /* 핸들의 모서리 둥글게 */
 }
 
-QPushButton:hover {
-	border:2px solid  rgb(255, 142, 119);
-	background-color: transparent;
-	border-radius: 5px;
+/* 슬라이더 핸들을 클릭하고 움직일 때의 스타일 */
+QSlider::handle:horizontal:pressed {
+    background: rgb(209, 198, 255) ;     /* 슬라이더를 움직일 때 핸들의 색상 변화 */
 }</string>
    </property>
-   <property name="text">
-    <string/>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
+   <property name="pageStep">
+    <number>5</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
+  <widget class="QLabel" name="soundLabel">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>390</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand Medium</family>
+     <pointsize>12</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 85, 255);
+font: 500 12pt &quot;Quicksand Medium&quot;;
+background-color:transparent;
+border-color:transparent;</string>
+   </property>
+   <property name="text">
+    <string>Sound</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>chatgroupBox</zorder>
+  <zorder>titleLabel</zorder>
+  <zorder>label</zorder>
+  <zorder>exit</zorder>
+  <zorder>exitButton</zorder>
+  <zorder>tvonButton</zorder>
+  <zorder>tvoffButton</zorder>
+  <zorder>channelBox</zorder>
+  <zorder>channelLabel</zorder>
+  <zorder>soundSlider</zorder>
+  <zorder>soundLabel</zorder>
  </widget>
  <resources/>
  <connections/>

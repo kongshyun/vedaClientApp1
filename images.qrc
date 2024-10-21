@@ -13,5 +13,7 @@
         <file>tvon.png</file>
         <file>quit.png</file>
         <file>user.png</file>
+        <file>celsius.png</file>
+        <file>humidity.png</file>
     </qresource>
 </RCC>

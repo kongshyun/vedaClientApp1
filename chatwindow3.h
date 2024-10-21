@@ -1,3 +1,5 @@
+//창문 관리 채팅방
+
 #ifndef CHATWINDOW3_H
 #define CHATWINDOW3_H
 

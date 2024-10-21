@@ -241,8 +241,8 @@ color: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>31</width>
-     <height>31</height>
+     <width>41</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -270,7 +270,7 @@ color: rgb(0, 0, 0);</string>
     <string notr="true">background-color:  rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/quit.png&quot; width = &quot;30&quot; height=&quot;30&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/quit.png&quot; width = &quot;40&quot; height=&quot;40&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

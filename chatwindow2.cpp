@@ -1,3 +1,5 @@
+//TV 관리 채팅방
+
 #include "chatwindow2.h"
 #include "ui_chatwindow2.h"
 
@@ -8,6 +10,7 @@ ChatWindow2::ChatWindow2(QString id, int channel, QWidget *parent):
     ui->setupUi(this);
     connectToServer("127.0.0.1", 12345); // 채팅방과 서버 연결
     connect(socket, &QTcpSocket::readyRead, this, &ChatWindow2::readServerData); // 소켓을 이용해 서버로부터 메세지 수신
+
 }
 
 ChatWindow2::~ChatWindow2()
@@ -67,5 +70,27 @@ void ChatWindow2::readServerData() {                                     // 서�
 void ChatWindow2::on_exitButton_clicked()
 {
     this->close();
+}
+
+
+//사운도 조절 슬라이드 바
+void ChatWindow2::on_soundSlider_actionTriggered(int action)
+{
+    qDebug() << "Sound changed!! : " <<action;
+}
+
+
+
+void ChatWindow2::on_channelBox_valueChanged(int value)
+{
+    // 플랫폼 리스트 정의
+    QStringList platformList = {"Netflix", "Youtube", "Tiving", "TikTok", "Coupang"};
+
+    // 값이 범위 내에 있는지 확인
+    if (value >= 0 && value < platformList.size()) {
+        // SpinBox의 값을 플랫폼 이름으로 변경
+        ui->channelBox->setPrefix(platformList[value] + " ");  // 플랫폼 이름을 SpinBox에 표시
+        qDebug() << "Platform changed to:" << platformList[value];
+    }
 }
 

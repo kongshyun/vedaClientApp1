@@ -428,10 +428,12 @@ qrc_images.cpp: images.qrc \
 		aircon.png \
 		smarthome.png \
 		padlock.png \
+		celsius.png \
 		login.png \
 		window.png \
 		tvon.png \
 		temperature.png \
+		humidity.png \
 		wind.png \
 		temp.png \
 		user.png \

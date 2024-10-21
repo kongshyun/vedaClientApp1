@@ -27,8 +27,6 @@ private slots:
 
     void on_airconOFF_clicked();
 
-    void on_comboBox_activated(int index);
-
     void on_windBox_currentIndexChanged(int index);
 
     void on_exitButton_clicked();

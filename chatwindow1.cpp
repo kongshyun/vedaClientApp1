@@ -11,6 +11,12 @@ ChatWindow1::ChatWindow1(QString id, int channel, QWidget *parent):
     ui->setupUi(this);
     connectToServer("127.0.0.1", 12345); // 채팅방과 서버 연결
     connect(socket, &QTcpSocket::readyRead, this, &ChatWindow1::readServerData); // 소켓을 이용해 서버로부터 메세지 수신
+
+    airconState = false;
+    ui->airconOFF->setStyleSheet("background-color: rgb(216, 213, 255); color: black;");
+    ui->airconON->setStyleSheet("");  // ON 버튼 색상 초기화
+    ui->dial->setEnabled(false); // 다이얼 조작 불가능하게 설정
+    ui->windBox->setEnabled(false); // 다이얼 조작 불가능하게 설정
 }
 
 ChatWindow1::~ChatWindow1()
@@ -26,7 +32,7 @@ void ChatWindow1::on_dial_valueChanged(int value)
         return;
     }
     // 다이얼 값이 변경되면 서버로 메시지 전송
-    QString dialMessage = id + " : " + QString::number(channel) + " : Temperature changed to " + QString::number(value);
+    QString dialMessage = id + " : " + QString::number(channel) + " : Temperature changed -> " + QString::number(value)+ "℃";
     sendMessage(dialMessage);  // 서버로 다이얼 값 전송
 }
 
@@ -111,20 +117,9 @@ void ChatWindow1::on_airconOFF_clicked()
     QString airconStateMessage = id + " : "+"Airconditioning OFF!";
     sendMessage(airconStateMessage);  // 서버로 상태 전송
     ui->dial->setEnabled(false); // 다이얼 조작 불가능하게 설정
-
+    ui->windBox->setEnabled(false); // 다이얼 조작 불가능하게 설정
     ui->airconOFF->setStyleSheet("background-color: rgb(216, 213, 255); color: black;");
     ui->airconON->setStyleSheet("");  // ON 버튼 색상 초기화
-
-}
-
-
-
-void ChatWindow1::on_comboBox_activated(int index)
-{
-    qDebug() << "SpinBox!";             // 수신 완료 로그
-
-    QString airconWindMessage = id + " : " + QString::number(channel) + "Wind Speed changed to " + QString::number(index+1);
-    sendMessage(airconWindMessage);  // 서버로 상태 전송
 
 }
 
@@ -133,7 +128,7 @@ void ChatWindow1::on_windBox_currentIndexChanged(int index)
 {
     qDebug() << "SpinBox!";             // 수신 완료 로그
 
-    QString airconWindMessage = id + " : " + QString::number(channel) + "Wind Speed changed to " + QString::number(index+1);
+    QString airconWindMessage = id + " : " + QString::number(channel) + " : Wind Speed -> " + QString::number(index+1)+ " level";
     sendMessage(airconWindMessage);  // 서버로 상태 전송
 
 }
